@@ -60,8 +60,7 @@ function check(
       }
 
       core.debug('comment check start')
-      core.debug(checkComment(comment.body, item))
-      core.debug('comment check end')
+
       if (item.bodies && checkComment(comment.body, item)  === false) {
         core.debug(
           `body is invalid. key: ${item.key}, expected: ${item.bodies}, got: ${comment.body}.`
