@@ -114,15 +114,16 @@ export async function getComments(
 }
 
 export function checkComment(comment: string, item: any): boolean {
-  for (const checkStr of item.body)
-      core.debug(
-          `debug, key: ${item.key}, expected: ${checkStr}, got: ${comment}.`
-      )
+  for (const checkStr of item.body) {
+    core.debug(
+        `debug, key: ${item.key}, expected: ${checkStr}, got: ${comment}.`
+    )
     if (comment.includes(checkStr)) {
       core.debug(
           `body is matched. key: ${item.key}, expected: ${checkStr}, got: ${comment}.`
       )
       return true
     }
+  }
   return false
 }
