@@ -59,8 +59,10 @@ function check(
         continue
       }
 
+      core.debug(`コメントチェックします。`)
+      core.debug(checkComment(comment.body, item))
+      core.debug(`コメントチェック終わり。`)
       if (item.bodies && checkComment(comment.body, item)  === false) {
-        core.debug(`コメントチェックします。`)
         core.debug(
           `body is invalid. key: ${item.key}, expected: ${item.bodies}, got: ${comment.body}.`
         )
