@@ -44,7 +44,7 @@ function check(
   checkItems: CheckItem[],
   comments: any
 ): {[key: string]: boolean} {
-  core.debug('check start...')
+  core.debug('check start...!!!')
 
   const result: {[key: string]: boolean} = {}
 
@@ -59,9 +59,9 @@ function check(
         continue
       }
 
-      core.debug(`コメントチェックします。`)
+      core.debug('comment check start')
       core.debug(checkComment(comment.body, item))
-      core.debug(`コメントチェック終わり。`)
+      core.debug('comment check end')
       if (item.bodies && checkComment(comment.body, item)  === false) {
         core.debug(
           `body is invalid. key: ${item.key}, expected: ${item.bodies}, got: ${comment.body}.`
